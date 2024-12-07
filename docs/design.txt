@@ -1,0 +1,472 @@
+1. PROBLEM STATEMENT: 
+    A program is needed that takes user input of several different words, including 
+    nouns, verbs and adverbs as well as asking them what type of story they want. 
+    They will choose between sad or funny and duck or turtle. The input will be 
+    run through a test to determine if the user wants a madlib story about a 
+    funny or sad turtle or duck. Based on the input, the words that were entered
+    into the web form will output a story that uses their input words in the story. 
+    There will be four stories available. 
+
+    NOUNS: 
+      several words, nouns, verbs, adverbs, sad or funny story, duck or turtle story, four madlib stories
+
+    VERBS: 
+      input of words, asking for story type, test input to determine story, output madlib story
+
+---
+2. DEFINING DIAGRAM 
+    INPUTS
+      adverb1
+      name1
+      name2
+      nounPlural1
+      nounPlural2
+      nounSingle1
+      nounSingle2
+      place
+      storyDescription
+      storyType
+      verbIng1
+      verbIng2
+      verbPast1
+      verbPastEd
+      verbPast2
+      verbPresent
+
+    PROCESSING STEPS
+      initialize form 
+      get form values 
+      assign form values to variables 
+      provide input to function to determine which story to tell 
+      send about and variable data to function for story output
+      check that all inputs are provided 
+        IF any of the variables are null THEN 
+          return "Please check that all form fields have been filled in to display the story here!"
+        ELSE 
+          run switch statement and 
+          return result
+        END IF
+      output storyOutput formatted as: 
+        "Please enjoy this madlib about the funny turtle!" 
+
+        provide storyOutput based on function
+
+    OUTPUTS 
+      Output story to the DOM formatted as 
+        "Please enjoy this madlib about the funny turtle!" 
+
+        provide storyOutput based on function
+
+---
+3. SOLUTION ALGORITHM 
+  function determineStory (inputStoryDescription, inputStoryType) 
+    initialize finalAbout to null 
+
+    WHILE (finalAbout is null)
+      convert inputStoryDescription to a string
+      convert inputStoryDescription to lower case 
+      convert inputStoryType to a string
+      convert inputStoryType to lower case 
+
+      BEGIN IF (inputStoryDescription inlcudes funny) THEN 
+        BEGIN IF (inputStoryType includes duck) THEN 
+          finalAbout is equal to "funny duck"
+        ELSE IF (inputStoryType includes turtle) THEN 
+            finalAbout is equal to "funny turtle"
+        ELSE 
+          alert "The entry for "Funny or Sad" or "Duck or Turtle" was not valid. Please try again!"
+        END IF
+      ELSE IF (inputStoryDescription includes sad) THEN 
+        BEGIN IF (inputStoryType includes duck) THEN 
+          finalAbout is equal to "sad duck"
+        ELSE IF (inputStoryType includes turtle) THEN 
+          finalAbout is equal to "sad turtle"
+        ELSE 
+          alert "The entry for "Funny or Sad" or "Duck or Turtle" was not valid. Please try again!"
+        END IF
+      END IF
+      return finalAbout
+    END WHILE
+  END 
+
+  function madlibStory(inputAbout, inputAdverb1, inputName1, inputName2, inputNounPlural1, 
+    inputNounPlural2, inputNounSingle1, inputNounSingle2, inputPlace, inputVerbIng1, 
+    inputVerbIng2, inputVerbPast1, inputVerbPast2, inputVerbPastEd, inputVerbPresent)
+      convert inputAdverb1 to lowercase
+      convert inputName1 to lowercase
+      convert inputName1 to capitalize the first character 
+      convert inputName2 to lowercase
+      convert inputName2 to capitialize the first character
+      convert inputNounPlural1 to lowercase
+      convert inputNounPlural2 to lowercase
+      convert inputNounSingle1 to lowercase
+      convert inputNounSingle2 to lowercase
+      convert inputPlace to lowercase
+      convert inputVerbIng1 to lowercase
+      convert inputVerbIng2 to lowercase
+      convert inputVerbPast1 to lowercase
+      convert inputVerbPast2 to lowercase
+      convert inputVerbPastEd to lowercase
+      convert inputVerbPresent to lowercase
+      initialize result to null
+
+    if (inputAdverb1 OR inputName1 OR inputName2 OR inputNounPlural1 OR inputNounPlural2
+        OR inputNounSingle1 OR inputNounSingle2 OR inputPlace OR inputVerbIng1 OR inputVerbIng2
+        OR inputVerbPast1 OR inputVerbPast2 OR inputVerbPastEd OR inputVerbPresent are null) THEN 
+          set return equal to "Please check that all form fields have been filled in to display the story here!"
+    ELSE 
+        switch inputabout for 
+          case "funny duck" 
+            set result equal to:
+                "One day a duck named " + inputName1 + " said to his pet frog, \"" + inputName2 + ", I've got an idea. <br>";
+                "Let's " + inputVerbPresent + " to the other side of the " + inputPlace + "\" <br>";
+                "<br>";
+                inputName2 + " the frog " + inputVerbPastEd + " at " + inputName1 + " and said, \"You know I'm a frog, right? <br>";
+                "I can hop " + inputNounPlural1 + " around you!\"<br>";
+                "<br>";
+                inputName1 + " " + inputVerbPast1 + ". \"Yeah, but I've got wings!\" <br>";
+                "<br>";
+                "They " + inputVerbPast2 + " across the " + inputPlace + ", with " + inputName2 + " " + inputVerbIng1 + " ahead and " + inputName1 + " " + inputVerbIng2 + " his <br>";
+                "wings " + inputAdverb1 + ". But halfway through, " + inputName1 + " got distracted by a shiny " + inputNounSingle1 + " and <br>";
+                "crashed into a " + inputNounSingle2 + ".<br>";
+                "<br>";
+                inputName2 + " won by a mile... and then just hopped back to the starting line to say <br>"; 
+                "\"I'm hoppy to be the winner!\"<br>";
+                "<br>";
+                inputName1 + " shook his head, \"Next time, no more racing -- unless it's for " + inputNounPlural2 + "!\""
+            return result
+          case "funny turtle" 
+            set result equal to: 
+                inputName1 + " the turtle and  " + inputName2 + " the rabbit planned to  " + inputVerbPresent + " to the  " + inputPlace + " one afternoon.  " + inputName2 + "<br>";
+                "was thrilled, bouncing from  " + inputNounSingle1 + " to  " + inputNounSingle1 + ", while  " + inputName1 + " took his time,  " + inputVerbIng1 + " in <br>";
+                "the lights and the games.  " + inputName2 + "  " + inputVerbPastEd + " over to the Ferris Wheel and hopped in the seat, <br>";
+                "shouting, \"Come on,  " + inputName1 + ", it'll be fun!\"<br>";
+                "<br>";
+                inputName1 + ", looked up at the  " + inputNounSingle2 + " and scoffed. \"I think I'll just watch\" he said, <br>";
+                inputAdverb1 + "  " + inputVerbIng2 + " his way to the nearby  " + inputNounPlural1 + ". <br>";
+                "<br>";
+                inputName2 + ", impatient,  " + inputVerbPast2 + " on the ride and zoomed around. Meanwhile,  " + inputName1 + " ordered <br>";
+                "a snack,  " + inputVerbPast1 + " down, and started nibbling on some  " + inputNounPlural2 + ". By the time  " + inputName2 + " <br>";
+                "finished,  " + inputName1 + " had already eaten his entire treat and was taking a nap. <br>";
+                "<br>";
+                inputName2 + " laughed. \"I guess some rides are better when you don't rush!\"";
+            return result;
+          case "sad duck"
+            set result equal to: 
+                "Once, there was a duck named  " + inputName1 + " and a pig named  " + inputName2 + " who lived in a quiet <br>";
+                inputPlace + ". They had been best friends since they were young, always  " + inputVerbIng1 + " their <br>";
+                inputNounSingle1 + ",  " + inputVerbIng2 + " on the  " + inputNounSingle2 + ", and watching the  " + inputNounPlural1 + " together.  " + inputName1 + " loved the <br>";
+                "water, while  " + inputName2 + " enjoyed lying in the sun, and though they were different, <br>";
+                "they found comfort in each other's company. <br>";
+                "<br>";
+                "As the years passed,  " + inputName1 + "'s wings grew tired, and he could no longer fly as high <br>";
+                "or  " + inputVerbPresent + " as far.  " + inputName2 + ", too, began to slow down, her  " + inputNounPlural2 + " aching from years of <br>";
+                "running in the fields. One chilly morning,  " + inputName1 + " waddled to  " + inputName2 + "'s side and <br>";
+                "noticed she was breathing  " + inputAdverb1 + ", her eyes dim. He gently  " + inputVerbPastEd + " her, but <br>";
+                " " + inputName2 + " didn't respond. With a heavy heart,  " + inputName1 + " stayed by her side all day, knowing <br>";
+                "that his dear friend's time had come. <br>";
+                "<br>";
+                "When the sun set that evening,  " + inputName2 + " was no longer there.  " + inputName1 + "  " + inputVerbPast1 + " by the mud, <br>";
+                "staring at the spot where they had once  " + inputVerbPast2 + ", his heart heavy with the loss of <br>";
+                "his only companion. From them on, every time  " + inputName1 + " swam in the pond or looked out <br>";
+                "over the fields, he felt the emptiness where  " + inputName2 + "'s laughter once echoed.";
+            return result;
+          case "sad turtle"
+            convert inputAdverb1 to be properly capitalized 
+            set result equal to: 
+                inputName1 + " the turtle had spent his entire life with the gentle  " + inputNounSingle1 + " of the seasons <br>";
+                "always steady and slow. But nothing compared to the joy he felt when he met  " + inputName2 + ", <br>";
+                "a graceful turtle who shared his love for quiet  " + inputNounPlural2 + " by the  " + inputPlace + " and peaceful <br>";
+                "swims beneath the  " + inputNounPlural1 + ". Together, they  " + inputVerbPast1 + " through life at their own <br>";
+                "pace, content in each other's company. <br>";
+                "<br>";
+                "As the years passed,  " + inputName2 + " grew weaker. Her once bright eyes began to dim, and <br>";
+                "she could no longer  " + inputVerbPresent + " alongside  " + inputName1 + ". One autumn evening, after a long <br>";
+                "silent  " + inputNounSingle2 + ",  " + inputName1 + " found  " + inputName2 + "  " + inputVerbIng1 + " beneath their favorite tree. <br>";
+                "Her shell was still, and the soft breeze no longer  " + inputVerbPast2 + " her. <br>";
+                "<br>";
+                inputAdverb1 + ",  " + inputName1 + "  " + inputVerbPastEd + " her, but he already knew. His heart shattered as he <br>";
+                "realized he was alone, standing in the same place where they had spent so many <br>";
+                "happy moments together. The  " + inputPlace + ", once full of laughter and love, now felt cold <br>";
+                "and endless. He stayed there for what seemed like an eternity,  " + inputVerbIng2 + " for the <br>";
+                "life they once had, but knowing he would never feel the warmth of her beside him again.";
+            return result;
+          default: 
+            output to DOM formatted as: "The entry for \"Funny or Sad\" or \"Duck or Turtle\" was not valid. Please try again!";
+      END switch  
+    END IF
+  END 
+
+  initialize the web form 
+  Add event to initiate on "submit"
+    Anonymous Function() 
+      initialize about to null 
+      initialize adverb1 to web form value
+      initialize name1 to web form value
+      initialize name2 to web form value 
+      initialize nounPlural1 to web form value 
+      initialize nounPlural2 to web form value
+      initialize nounSingle1 to web form value
+      initialize nounSingle2 to web form value
+      initialize output to null
+      initialize place to web form value
+      initialize storyDescription to web form value 
+      initialize storyOutput to null
+      initialize storyType to web form value
+      initialize verbIng1 to web form value
+      initialize verbIng2 to web form value
+      initialize verbPast1 to web form value
+      initialize verbPast2 to web form value
+      initialize verbPastEd to web form value
+      initialize verbPresent to web form value
+
+      Cancel default event for form submission 
+      
+      call determineStory with 
+        storyDescription and storyType and 
+        set to about
+      
+      call madlibStory with 
+        about, adverb1, name1, name2, nounPlural1, nounPlural2, nounSingle1,
+        nounSingle2,place, verbIng1, verbIng2, verbPast1, verbPast2, verbPastEd, 
+        verbPresent and 
+        set to storyOutput
+
+      Output to DOM formatted as 
+        if about is undefined THEN 
+          output "The entry for \"Funny or Sad\" or \"Duck or Turtle\" was not valid. Please try again!"
+        ELSE 
+          output formatted as: 
+          "Please enjoy this madlib about the funny turtle!" 
+
+          storyOutput 
+    END Function
+  END Event 
+
+---
+4. TEST PLANS 
+    VARIABLES: 
+      storyDescription 
+      storyType 
+      adverb1 
+      name1 
+      name2 
+      nounPlural1 
+      nounPlural2 
+      nounSingle1 
+      nounSingle2 
+      place
+      verbIng1 
+      verbIng2 
+      verbPast1 
+      verbPast2 
+      verbPastEd 
+      verbPresent 
+
+      TEST PLAN 1: 
+        INPUT: funny, turtle, adversely, hanky, johnny, feet, teeth, car, box, park, parking, backing, swam, ran, pasted, lick
+
+        EXPECTED RESULT:
+          Please enjoy this madlib about the funny turtle!
+
+          Hanky the turtle and Johnny the rabbit planned to lick to the park one afternoon. Johnny
+          was thrilled, bouncing from car to car, while Hanky took his time, parking in 
+          the lights and the games. Johnny pasted over to the Ferris Wheel and hopped in the seat, 
+          shouting, "Come on, Hanky, it'll be fun!"
+
+          Hanky, looked up at the box and scoffed. "I think I'll just watch" he said, 
+          adversely backing his way to the nearby feet. 
+
+          Johnny, impatient, ran on the ride and zoomed around. Meanwhile, Hanky ordered 
+          a snack, swam down, and started nibbling on some teeth. By the time Johnny 
+          finished, Hanky had already eaten his entire treat and was taking a nap. 
+
+          Johnny laughed. "I guess some rides are better when you don't rush!"
+
+        ACTUAL RESULT: 
+          Please enjoy this madlib about the funny turtle!
+
+          Hanky the turtle and Johnny the rabbit planned to lick to the park one afternoon. Johnny
+          was thrilled, bouncing from car to car, while Hanky took his time, parking in 
+          the lights and the games. Johnny pasted over to the Ferris Wheel and hopped in the seat, 
+          shouting, "Come on, Hanky, it'll be fun!"
+
+          Hanky, looked up at the box and scoffed. "I think I'll just watch" he said, 
+          adversely backing his way to the nearby feet. 
+
+          Johnny, impatient, ran on the ride and zoomed around. Meanwhile, Hanky ordered 
+          a snack, swam down, and started nibbling on some teeth. By the time Johnny 
+          finished, Hanky had already eaten his entire treat and was taking a nap. 
+
+          Johnny laughed. "I guess some rides are better when you don't rush!"
+
+      TEST PLAN 2: 
+        INPUT: funny, duck, adversely, hanky, johnny, feet, teeth, car, box, park, parking, backing, swam, ran, pasted, lick
+
+        EXPECTED RESULT:
+          Please enjoy this madlib about the funny duck!
+
+          One day a duck named Hanky said to his pet frog, "Johnny, I've got an idea. 
+          Let's lick to the other side of the park!" 
+
+          Johnny the frog pasted at Hanky and said, "You know I'm a frog, right? 
+          I can hop feet around you!"
+
+          Hanky swam. "Yeah, but I've got wings!" 
+
+          They ran across the park, with Johnny parking ahead and Hanky backing his 
+          wings adversely. But halfway through, Hanky got distracted by a shiny car and 
+          crashed into a box.
+
+          Johnny won by a mile... and then just hopped back to the starting line to say 
+          "I'm hoppy to be the winner!"
+
+          Hanky shook his head, "Next time, no more racing -- unless it's for teeth!"
+
+        ACTUAL RESULT: 
+          Please enjoy this madlib about the funny duck!
+
+          One day a duck named Hanky said to his pet frog, "Johnny, I've got an idea. 
+          Let's lick to the other side of the park!" 
+
+          Johnny the frog pasted at Hanky and said, "You know I'm a frog, right? 
+          I can hop feet around you!"
+
+          Hanky swam. "Yeah, but I've got wings!" 
+
+          They ran across the park, with Johnny parking ahead and Hanky backing his 
+          wings adversely. But halfway through, Hanky got distracted by a shiny car and 
+          crashed into a box.
+
+          Johnny won by a mile... and then just hopped back to the starting line to say 
+          "I'm hoppy to be the winner!"
+
+          Hanky shook his head, "Next time, no more racing -- unless it's for teeth!"
+
+      TEST PLAN 3: 
+        INPUT: sad, duck, adversely, hanky, johnny, feet, teeth, car, box, park, parking, backing, swam, ran, pasted, lick
+
+        EXPECTED RESULT:
+          Please enjoy this madlib about the sad duck!
+
+          Once, there was a duck named Hanky and a pig named Johnny who lived in a quiet 
+          park. They had been best friends since they were young, always parking their 
+          car, backing on the box, and watching the feet together. Hanky loved the 
+          water, while Johnny enjoyed lying in the sun, and though they were different, 
+          they found comfort in each other's company. 
+
+          As the years passed, Hanky's wings grew tired, and he could no longer fly as high 
+          or lick as far. Johnny, too, began to slow down, her teeth aching from years of 
+          running in the fields. One chilly morning, Hanky waddled to Johnny's side and 
+          noticed she was breathing adversely, her eyes dim. He gently pasted her, but 
+          Johnny didn't respond. With a heavy heart, Hanky stayed by her side all day, knowing 
+          that his dear friend's time had come. 
+
+          When the sun set that evening, Johnny was no longer there. Hanky swam by the mud, 
+          staring at the spot where they had once ran, his heart heavy with the loss of 
+          his only companion. From them on, every time Hanky swam in the pond or looked out 
+          over the fields, he felt the emptiness where Johnny's laughter once echoed.
+
+        ACTUAL RESULT: 
+          Please enjoy this madlib about the sad duck!
+
+          Once, there was a duck named Hanky and a pig named Johnny who lived in a quiet 
+          park. They had been best friends since they were young, always parking their 
+          car, backing on the box, and watching the feet together. Hanky loved the 
+          water, while Johnny enjoyed lying in the sun, and though they were different, 
+          they found comfort in each other's company. 
+
+          As the years passed, Hanky's wings grew tired, and he could no longer fly as high 
+          or lick as far. Johnny, too, began to slow down, her teeth aching from years of 
+          running in the fields. One chilly morning, Hanky waddled to Johnny's side and 
+          noticed she was breathing adversely, her eyes dim. He gently pasted her, but 
+          Johnny didn't respond. With a heavy heart, Hanky stayed by her side all day, knowing 
+          that his dear friend's time had come. 
+
+          When the sun set that evening, Johnny was no longer there. Hanky swam by the mud, 
+          staring at the spot where they had once ran, his heart heavy with the loss of 
+          his only companion. From them on, every time Hanky swam in the pond or looked out 
+          over the fields, he felt the emptiness where Johnny's laughter once echoed.
+
+      TEST PLAN 4: 
+        INPUT: sad, turtle, adversely, hanky, johnny, feet, teeth, car, box, park, parking, backing, swam, ran, pasted, lick
+
+        EXPECTED RESULT:
+          Please enjoy this madlib about the sad turtle!
+
+          Hanky the turtle had spent his entire life with the gentle car of the seasons 
+          always steady and slow. But nothing compared to the joy he felt when he met Johnny, 
+          a graceful turtle who shared his love for quiet teeth by the park and peaceful 
+          swims beneath the feet. Together, they swam through life at their own 
+          pace, content in each other's company. 
+
+          As the years passed, Johnny grew weaker. Her once bright eyes began to dim, and 
+          she could no longer lick alongside Hanky. One autumn evening, after a long 
+          silent box, Hanky found Johnny parking beneath their favorite tree. 
+          Her shell was still, and the soft breeze no longer ran her. 
+
+          Adversely, Hanky pasted her, but he already knew. His heart shattered as he 
+          realized he was alone, standing in the same place where they had spent so many 
+          happy moments together. The park, once full of laughter and love, now felt cold 
+          and endless. He stayed there for what seemed like an eternity, backing for the 
+          life they once had, but knowing he would never feel the warmth of her beside him again.
+
+        ACTUAL RESULT:     
+          Please enjoy this madlib about the sad turtle!
+
+          Hanky the turtle had spent his entire life with the gentle car of the seasons 
+          always steady and slow. But nothing compared to the joy he felt when he met Johnny, 
+          a graceful turtle who shared his love for quiet teeth by the park and peaceful 
+          swims beneath the feet. Together, they swam through life at their own 
+          pace, content in each other's company. 
+
+          As the years passed, Johnny grew weaker. Her once bright eyes began to dim, and 
+          she could no longer lick alongside Hanky. One autumn evening, after a long 
+          silent box, Hanky found Johnny parking beneath their favorite tree. 
+          Her shell was still, and the soft breeze no longer ran her. 
+
+          Adversely, Hanky pasted her, but he already knew. His heart shattered as he 
+          realized he was alone, standing in the same place where they had spent so many 
+          happy moments together. The park, once full of laughter and love, now felt cold 
+          and endless. He stayed there for what seemed like an eternity, backing for the 
+          life they once had, but knowing he would never feel the warmth of her beside him again.  
+
+      TEST PLAN 5: 
+        INPUT: sade, duck, adversely, hanky, johnny, feet, teeth, car, box, park, parking, backing, swam, ran, pasted, lick
+
+        EXPECTED RESULT: 
+          The entry for "Funny or Sad" or "Duck or Turtle" was not valid. Please try again! 
+
+        ACTUAL RESULT: 
+          The entry for "Funny or Sad" or "Duck or Turtle" was not valid. Please try again! 
+
+      TEST PLAN 6: 
+        INPUT: sad, duc, adversely, hanky, johnny, feet, teeth, car, box, park, parking, backing, swam, ran, pasted, lick
+
+        EXPECTED RESULT: 
+          The entry for "Funny or Sad" or "Duck or Turtle" was not valid. Please try again! 
+
+        ACTUAL RESULT: 
+          The entry for "Funny or Sad" or "Duck or Turtle" was not valid. Please try again! 
+
+      TEST PLAN 7: 
+        INPUT: sad, duck, "", "", "", "", "", "", "", "", "", "", "", "", "", ""
+
+        EXPECTED RESULT: 
+          Please enjoy this madlib about the sad duck! 
+
+          Please check that all form fields have been filled in to display the story here!
+        
+        ACTUAL RESULT: 
+          Please enjoy this madlib about the sad duck! 
+
+          Please check that all form fields have been filled in to display the story here!
+
+      TEST PLAN 8: 
+        INPUT: "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""
+
+        EXPECTED RESULT: 
+          The entry for "Funny or Sad" or "Duck or Turtle" was not valid. Please try again! 
+        
+        ACTUAL RESULT: 
+          The entry for "Funny or Sad" or "Duck or Turtle" was not valid. Please try again! 

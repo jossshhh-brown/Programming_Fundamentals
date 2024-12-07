@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>Josh Brown Final Project - JavaScript</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/determineStory.js"></script>
+    <script src="js/madlibStory.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>MadLib Generator</h1>
+    </header>
+    <main>
+      <pre> 
+        Welcome to the MadLib generator!
+
+        Here, we will build one of four madlibs together. 
+
+        We will use the words entered into the form below to unravel a story. 
+        The words you choose will help us make the story more interesting. 
+
+        Please complete the form, below, and click "Submit" to continue: 
+        <form id="initialStory_form">
+          <label for="funny_or_sad">Would you like the story to be funny or sad?</label> <input id="funny_or_sad" type="string">
+          <label for="duck_or_turtle">Would you like the story to be about a duck or a turtle?</label> <input id="duck_or_turtle">
+          <label for="adverb1">Please enter an adverb (ending in -ly): </label> <input id="adverb1" type="string">
+          <label for="name1">Please enter a name: </label> <input id="name1" type="string">
+          <label for="name2">Please enter a name: </label> <input id="name2" type="string">
+          <label for="nounPlural1">Please enter an noun (plural): </label> <input id="nounPlural1" type="string">
+          <label for="nounPlural2">Please enter an noun (plural): </label> <input id="nounPlural2" type="string">
+          <label for="nounSingle1">Please enter an noun (singular): </label> <input id="nounSingle1" type="string">
+          <label for="nounSingle2">Please enter an noun (singular): </label> <input id="nounSingle2" type="string">
+          <label for="place">Please enter a place (somewhere outside): </label> <input id="place" type="string">
+          <label for="verbIng1">Please enter a verb ending in -ing: </label> <input id="verbIng1" type="string">
+          <label for="verbIng2">Please enter a verb ending in -ing: </label> <input id="verbIng2" type="string">
+          <label for="verbPast1">Please enter a verb (past tense): </label> <input id="verbPast1" type="string">
+          <label for="verbPast2">Please enter a verb (past tense): </label> <input id="verbPast2" type="string">
+          <label for="verbPastEd">Please enter a verb (past tense ending in -ed): </label> <input id="verbPastEd" type="string">
+          <label for="verbPresent">Please enter a verb (present tense): </label> <input id="verbPresent" type="string">
+          <input class="submit" type="submit" value="Submit">
+        </form>
+      </pre>
+      <pre id="madlib">
+        <p id="hidden">Your output will appear here shortly! </p><script src="js/script.js"></script>
+      </pre>
+    </main>
+  </body>
+</html>

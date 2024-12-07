@@ -1,0 +1,58 @@
+header {
+  background-color: rgb(253, 187, 227);
+  padding: 10px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+body {
+  background-color: rgb(57, 47, 79);
+}
+
+h1 {
+  color: rgb(146, 78, 159);
+  padding: 10px;
+  font-size: 60px;
+}
+
+p, pre {
+  padding: 0;
+  margin: 0;
+}
+
+span {
+  background: rgb(253, 187, 227);
+  color:rgb(146, 78, 159);
+}
+
+main {
+  background-color: rgb(127, 69, 154);
+  color: rgb(134, 142, 233);
+  border-radius: 20px;
+  padding: 25px;
+  margin-top: 5px;
+  word-break: keep-all;
+  font-size: 24px;
+}
+
+input {
+  background-color:rgb(253, 187, 227);
+  color: rgb(146, 78, 159);
+  font-size: 18px;
+}
+
+input.submit {
+  background-color:rgb(253, 187, 227);
+  color: rgb(146, 78, 159);
+  font-size: 24px;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+
+#madlib {
+  padding: 15px;
+  margin: 15px;
+  background-color: rgb(134, 142, 233);
+  color: rgb(127, 69, 154); 
+  font: Times New Roman; 
+}
