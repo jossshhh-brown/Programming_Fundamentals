@@ -1,5 +1,5 @@
 header {
-  background-color: rgb(253, 187, 227);
+  background-color: rgb(246, 213, 233);
   padding: 10px;
   text-align: center;
   border-radius: 20px;
@@ -21,7 +21,7 @@ p, pre {
 }
 
 span {
-  background: rgb(253, 187, 227);
+  background: rgb(246, 213, 233);
   color:rgb(146, 78, 159);
 }
 
@@ -36,13 +36,13 @@ main {
 }
 
 input {
-  background-color:rgb(253, 187, 227);
+  background-color:rgb(246, 213, 233);
   color: rgb(146, 78, 159);
   font-size: 18px;
 }
 
 input.submit {
-  background-color:rgb(253, 187, 227);
+  background-color:rgb(246, 213, 233);
   color: rgb(146, 78, 159);
   font-size: 24px;
   font-weight: bold;
